@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Diya ❤️</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+font-family:Arial, sans-serif;
+background: linear-gradient(-45deg,#ff6b81,#ff9ff3,#feca57,#ff6b81);
+background-size:400% 400%;
+animation: bg 8s infinite alternate;
+color:white;
+text-align:center;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
+
+.container{
+width:90%;
+max-width:500px;
+padding:20px;
+}
+
+.page{
+display:none;
+}
+
+.page.active{
+display:block;
+animation:fade 0.5s ease-in-out;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+button{
+padding:12px 20px;
+margin-top:20px;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+}
+
+.next{
+background:white;
+color:#ff4d6d;
+font-weight:bold;
+}
+
+#yes{
+background:#00ff88;
+font-weight:bold;
+}
+
+#no{
+background:#ff1744;
+color:white;
+position:relative;
+}
+
+.heart{
+position:fixed;
+bottom:-10px;
+animation:float 5s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="page1" class="page active">
+<h3>Diya this is only for you plzz read it till end😭</h3>
+<button class="next" onclick="showPage(2)">Next</button>
+</div>
+
+<div id="page2" class="page">
+<p>
+I don’t even know how to say this but tumhare liye meri feelings pahle din se kuch alag thi🫠<br><br>
+Or jaise jaise time guzarta gya those feelings they just kept growing stronger ❤️‍🔥<br><br>
+Sabse pehle jo cheez mujhe attract ki woh tumhari aankhein thi👀<br><br>
+Tumhari smile, tumhara nature sab kuch mujhe honestly bohot pasand hai<br><br>
+I genuinely like you, I juss wanted u to know how I feel
+</p>
+<button class="next" onclick="showPage(3)">Next</button>
+</div>
+
+<div id="page3" class="page">
+<p>
+Nd u know all those reposts? They were about you 🫣<br><br>
+At least give me one chance ❤️<br><br>
+So whatever your decision is ill respect it completely
+</p>
+<button class="next" onclick="showPage(4)">Next</button>
+</div>
+
+<div id="page4" class="page">
+<h3>So Will you be my Malkin?😭👑🫠</h3>
+<button id="yes" onclick="celebrate()">Yes 💖</button>
+<button id="no">No 😭</button>
+</div>
+
+</div>
+
+<script>
+function showPage(num){
+var pages=document.getElementsByClassName("page");
+for(var i=0;i<pages.length;i++){
+pages[i].classList.remove("active");
+}
+document.getElementById("page"+num).classList.add("active");
+}
+
+function celebrate(){
+alert("YAYYYYY ❤️😭");
+}
+
+setInterval(function(){
+var heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+12)+"px";
+document.body.appendChild(heart);
+setTimeout(function(){heart.remove();},5000);
+},400);
+
+var noBtn=document.getElementById("no");
+noBtn.addEventListener("click",function(){
+noBtn.style.transform="translate("+(Math.random()*100-50)+"px,"+(Math.random()*50-25)+"px)";
+});
+</script>
+
+</body>
+</html>
